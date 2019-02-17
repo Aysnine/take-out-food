@@ -31,10 +31,10 @@ function bestCharge(selectedItems) {
     }
 
     return false;
-  }).filter(i => i != false).sort((A, B) => A.final - B.final);
+  }).filter(i => i != false);
 
   // 优惠结果
-  const result = results.length ? results[0] : false;
+  const result = results.length ? results.sort((A, B) => A.final - B.final)[0] : false;
 
   // 总价
   const final_price = result ? result.final : prime;
